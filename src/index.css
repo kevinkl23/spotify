@@ -71,3 +71,42 @@ code {
   box-shadow: none;
   transform: translateY(0);
 }
+
+.search-form {
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+
+.song-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 25%;
+  text-align: left;
+  margin-left: 5rem;
+  background-color: #F0A646;
+  border: 0.5px solid black;
+  border-radius: 3px;
+  justify-content: space-between;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.song-name {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.artist-name {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.add-button {
+  margin-left: 2rem;
+  margin: 0.5rem;
+}

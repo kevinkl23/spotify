@@ -2,9 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { render } from '@testing-library/react';
-import SearchBar from './components/SearchBar';
 import Header from './components/Header';
+import Body from './components/Body';
 
 function App() {
 
@@ -48,12 +47,15 @@ function App() {
     // console.log(songs);
   }
 
-  const renderArtists = () => {
+  const renderSongs = () => {
     return songs.map(song => {
       return(
-        <div key={song.id}>
-          <p>{song.name}</p>
-          <p>{song.artists[0].name}</p>
+        <div key={song.id} className='song-container'>
+          <div className='song-info'>
+            <p className='song-name'>{song.name}</p>
+            <p className='artist-name'>{song.artists[0].name}</p>
+          </div>
+          <button className='add-button'>+</button>
         </div>
       );
     });
@@ -63,13 +65,7 @@ function App() {
     <div className="App">
       <Header token={token} logOut={logout}/>
 
-
-      {token ?
-        <SearchBar searchArtists={searchArtists} setSearch={setSearch} /> :
-        <h2>Please Log In</h2>
-      }
-
-      {renderArtists()}
+      <Body token={token} search={search} searchArtists={searchArtists} setSearch={setSearch} renderSongs={renderSongs}/>
     </div>
   );
 }
