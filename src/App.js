@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import { link } from './util/Spotify';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { render } from '@testing-library/react';
 import SearchBar from './components/SearchBar';
+import Header from './components/Header';
 
 function App() {
 
@@ -61,10 +61,7 @@ function App() {
 
   return (
     <div className="App">
-      {!token ? 
-        <a href={link}>Log In</a> :
-        <button onClick={logout}>Log Out</button>
-      }
+      <Header token={token} logOut={logout}/>
 
 
       {token ?
